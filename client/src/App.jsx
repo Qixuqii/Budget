@@ -3,14 +3,17 @@ import {
   RouterProvider,
   Outlet
 } from "react-router-dom";
+import './tailwind.css';
 import Register from "./pages/Register";
 import Write from "./pages/Write";
 import Home from "./pages/Home";
 import Single from "./pages/Single";
 import Login from "./pages/Login";
+import CreateBudget from "./pages/CreateBudget";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer"
-import './style.scss'
+import Footer from "./components/Footer";
+import './style.scss';
+import Budgets from "./pages/Budgets";
 
 const Layout = () => {
   return (
@@ -30,6 +33,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />
+      },
+      { path: "/budgets", element: <Budgets /> },
+      {
+        path: "/budget/new",
+        element: <CreateBudget />
       },
       {
         path: "/post/:id",
